@@ -1,0 +1,51 @@
+snippet defmm "def method_missing"
+def method_missing(meth, *args, &blk)
+	${1}
+end
+endsnippet
+
+snippet defs "def class method"
+def self.${1:class_method_name}
+	${2}
+end
+endsnippet
+
+snippet ua "update_attribute" !w
+update_attribute(:${1:attr}, ${2:value})
+endsnippet
+
+snippet uas "update_attributes" !w
+update_attributes(params[:${1:model}])
+endsnippet
+
+snippet par "params hash object" !
+params[:${1:model}]
+endsnippet
+
+snippet pari "params id object" !
+params[:id]
+endsnippet
+
+snippet parfk "params foreign key" !i
+params[:${model}_id]
+endsnippet
+
+snippet reda "redirect_to with :alert" !
+redirect_to @${1:model}, :alert => ${2:"message"}
+endsnippet
+
+snippet redf "redirect_to with :flash" !
+redirect_to @${1:model}, :flash => { ${2::success}  => ${3:"message"}}
+endsnippet
+
+snippet redn "redirect_to with :notice" !b
+redirect_to @${1:model}, :notice => ${2:"message"}
+endsnippet
+
+snippet bfo "before_filter :only" !b
+before_filter :${1:method}, only: [:show, :edit, :update,:destroy]
+endsnippet
+
+snippet bfe "before_filter :except" !b
+before_filter :${1:method}, except: [:create, :index]
+endsnippet
