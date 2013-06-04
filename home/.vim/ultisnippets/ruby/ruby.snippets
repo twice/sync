@@ -24,6 +24,14 @@ if ${1:condition}
 end
 endsnippet
 
+snippet if "if .. else" !
+if ${1:condition}
+  $2
+else
+  $0
+end
+endsnippet
+
 snippet elsif "elsif"
 elsif ${1:condition}
 endsnippet
@@ -126,7 +134,7 @@ snippet : ":"
 endsnippet
 
 snippet si "#{} - string interpolation" !iw
-#{$0}
+#{$1}$0
 endsnippet
 
 snippet nam "nam"
@@ -136,7 +144,7 @@ end
 endsnippet
 
 snippet { "{"
-{ |${1}| }
+{ |${1}| $0 }
 endsnippet
 
 snippet fex "fex"
@@ -162,3 +170,31 @@ endsnippet
 snippet . "."
 File.dirname(__FILE__)
 endsnippet
+snippet ea "each {}" !iw
+each {|${1:el| $0 }
+endsnippet
+
+snippet ead " each do ..end" !iw
+each do |${1:el}|
+  $0
+end
+endsnippet
+
+snippet map "map {}" !iw
+map { |${1:el}| $0 }
+endsnippet
+
+snippet mapd "map do..end" !iw
+map do |${1:el}|
+  $0
+end
+endsnippet
+
+snippet W "%W{}" !iw
+%W{$0}
+endsnippet
+
+snippet Q "%Q{}" !iw
+%Q{$0}
+endsnippet
+

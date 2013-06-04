@@ -65,3 +65,62 @@ endsnippet
 snippet bfe "before_filter :except" !b
 before_filter :${1:method}, except: [:create, :index]
 endsnippet
+
+snippet bt "belongs_to" !
+belongs_to :${1:association}
+endsnippet
+
+snippet btc "belongs_to class_name" !
+belongs_to :${1:association}, class_name: ${0:class_name}
+endsnippet
+
+snippet btp "belongs_to polymorphic" !
+belongs_to :${1:association}, polymorphic: true$0
+endsnippet
+
+snippet hm "has_many" !
+has_many :${1:objects}
+endsnippet
+
+snippet hmd "has_many dependent destroy" !
+has_many :${1:objects}, :dependent => :destroy$0
+endsnippet
+
+snippet hmt "has_many :through" !
+has_many :${1:objects}, :through => :${0:association}
+endsnippet
+snippet va "validates acceptance" !
+validates :${1:terms}, :acceptance => true
+endsnippet
+
+snippet vc "validates confirmation" !
+validates :${1:attribute}, :confirmation => true
+endsnippet
+
+snippet ve "validates exclusion" !
+validates :${1:attribute}, :exclusion => { :in => ${2:%w( mov avi )} }
+endsnippet
+
+snippet vf "validates format" !
+validates :${1:attribute}, :format => { :with => /${2:regex}/ }
+endsnippet
+
+snippet vi
+validates :${1:attribute}, :inclusion => { :in => %w(${2: mov avi }) }
+endsnippet
+
+snippet vl "validates length" !
+validates :${1:attribute}, :length => { :in => ${2:3}..${3:20} }
+endsnippet
+
+snippet vn "validates numericality" !
+validates :${1:attribute}, :numericality => true
+endsnippet
+
+snippet vp "validates presence" !
+validates :${1:attribute}, :presence => true
+endsnippet
+
+snippet vu "validate uniqueness" !
+validates :${1:attribute}, :uniqueness => true
+endsnippet
