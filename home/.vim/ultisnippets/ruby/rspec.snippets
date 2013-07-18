@@ -113,4 +113,10 @@ snippet rsh "require spec_helper" !b
 require 'spec_helper'
 endsnippet
 
+snippet rconf "RSpec.configure"
+RSpec.configure do |config|
+  config.include ${1:Helper}, :${2:key} => :${3:value}
+  $0
+end
+endsnippet
 
